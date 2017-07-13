@@ -1,9 +1,6 @@
 package com.tim.config
 
 import com.tim.packet.timConstants
-
-
-
 /**
  * @Author donnie {donnie4w@gmail.com}
  * @Date 2017/7/12
@@ -17,7 +14,7 @@ class Config{
     var domain = "donnie4w@gmail.com"
     var ip = "127.0.0.1"
     var port = 3737
-    var heartbeat = 30// default 30second
+    var heartbeat = 30 // default 30second
     var reconnectionAllowed = true
     var connectTimeout = 10000 // default 30second
     var resource = "timclient"
