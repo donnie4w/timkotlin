@@ -15,7 +15,7 @@ import org.apache.thrift.TException
  * @Author donnie {donnie4w@gmail.com}
  * @Date 2017/7/26
  */
-class ITimImpl: IfaceImpl() {
+class ITimImpl: IfaceImpl {
     // private static final Log logger = Log.getLogger();
     var connect: IConnect
     var client: Client
@@ -115,10 +115,9 @@ class ITimImpl: IfaceImpl() {
     override fun timMessageList(mbeanList: TimMBeanList?) {
         connect.getC2sClient().timAck(TimAckBean().setAckType("message").setAckStatus("200").setId(mbeanList!!.getThreadId()))
         try {
-            connect.getMessageListener().processMessage(mbeanList.getTimMBeanList())
+            connect.getMessageListener().processMessage(mbeanList!!.getTimMBeanList())
         } catch (e: Exception) {
             throw TException(e)
         }
-
     }
 }
